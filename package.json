@@ -15,9 +15,10 @@
         "eslint": "eslint --fix .",
         "format": "prettier --write \"*.{css,js,json,md,ts,tsx}\" \"./**/*.{css,js,json,md,ts,tsx}\"",
         "lint": "yarn format && yarn eslint",
-        "transpile:acknowledgment": "tsc ts/acknowledgment/* --outDir js",
+        "transpile:acknowledgment": "yarn clean && tsc ts/acknowledgment/* --outDir js",
+        "generated:acknowledgment": "node --trace-warnings js/generated_acknowledgment.js",
         "license:comment": "node js/license_comment.js",
-        "generated:acknowledgment": "node --trace-warnings js/generated_acknowledgment.js"
+        "clean": "rimraf js ACKNOWLEDGMENTS.md"
     },
     "eslintConfig": {
         "extends": [

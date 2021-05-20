@@ -37,14 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 exports.headerComments = void 0;
-/*
- Copyright (c) 2020 - 2021 https://eudes.codes/
- @author: Eudes Evrard BOBBOH - EBO
- @country: France
- @email: evrard@eudes.codes
- @website: https://eudes.codes/
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/ /* eslint-disable no-undef */
+/* eslint-disable no-undef */
 var path_1 = require("path");
 var fs = require("fs");
 var p_map_1 = require("p-map");
@@ -63,14 +56,23 @@ var headerComments = function (Path) {
     var COUNTRY = ' @country: France';
     var E_MAIL = ' @email: evrard@eudes.codes';
     var WEBSITE = ' @website: https://eudes.codes/';
-    var LICENSE = "THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.";
+    var EMPTY = '';
+    var LICENSE = [
+        " THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR",
+        " IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
+        " FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE",
+        " AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
+        " LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,",
+        " OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE",
+        " SOFTWARE.",
+    ].join('\n');
     // extensions
     var EXTENSIONS_TO_CHECK = new Set(['html', 'txt', 'md']);
     var FILE_EXTENSIONS = Path.split('.').pop();
     if (FILE_EXTENSIONS && !EXTENSIONS_TO_CHECK.has(FILE_EXTENSIONS))
-        return ['/*', COPYRIGHT, AUTHOR, COUNTRY, E_MAIL, WEBSITE, LICENSE, '*/'].join('\n');
+        return ['/*', COPYRIGHT, AUTHOR, COUNTRY, E_MAIL, WEBSITE, EMPTY, LICENSE, '*/'].join('\n');
     // @return
-    return ['<!--', COPYRIGHT, AUTHOR, COUNTRY, E_MAIL, WEBSITE, LICENSE, '-->'].join('\n');
+    return ['<!--', COPYRIGHT, AUTHOR, COUNTRY, E_MAIL, WEBSITE, EMPTY, LICENSE, '-->'].join('\n');
 };
 exports.headerComments = headerComments;
 /**
