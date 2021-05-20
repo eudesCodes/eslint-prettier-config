@@ -16,7 +16,8 @@
         "format": "prettier --write \"*.{css,js,json,md,ts,tsx}\" \"./**/*.{css,js,json,md,ts,tsx}\"",
         "lint": "yarn format && yarn eslint",
         "transpile:acknowledgment": "tsc ts/acknowledgment/* --outDir js",
-        "license:comment": "node js/license_comment.js"
+        "license:comment": "node js/license_comment.js",
+        "generated:acknowledgment": "node --trace-warnings js/generated_acknowledgment.js"
     },
     "eslintConfig": {
         "extends": [
